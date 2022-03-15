@@ -1,0 +1,66 @@
+/* ハンバーガーボタンの位置とサイズ */
+.bm-burger-button {
+  position: fixed;
+  width: 15px;
+  height: 15px;
+  right: 15px;
+  top: 10px;
+}
+
+/* ハンバーガーアイコンの色と形状 */
+.bm-burger-bars {
+  background: #fff;
+}
+
+/* ホバー状態のハンバーガーアイコンの色と形状*/
+.bm-burger-bars-hover {
+  background: #ddd;
+}
+
+/* 閉じるボタンの位置とサイズ */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* 閉じるボタンの色と形状 */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/*
+サイドバーラッパースタイル
+Note: アニメーションが壊れる可能性があるため、変更には注意。ほぼ変更する必要はない。
+*/
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+
+/* サイドバースタイル */
+.bm-menu {
+  background: rgba(30, 30, 30, 1);
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* bubbleまたはelasticのモーフ形状 */
+.bm-morph-shape {
+  fill: rgba(30, 30, 30, 1);
+}
+
+/* アイテムリストのラッパー */
+/*.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+}*/
+
+/* アイテム */
+/*.bm-item {
+  display: inline-block;
+}*/
+
+/* オーバーレイのスタイル */
+/*.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}*/
