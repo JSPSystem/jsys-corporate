@@ -36,13 +36,6 @@ const Top = () => {
       });
   }, []);
 
-  /*
-  <article
-      id="content_top"
-      className="relative flex justify-center items-center w-full h-128 md:h-screen bg-cover bg-center bg-img-top-mb md:bg-img-top font-jura text-white"
-    ></article>
-  */
-
   return (
     <article
       id="content_top"
