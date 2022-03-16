@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import Link from "next/link";
-import { NavProps } from "./types/NavProps";
 import NavLink from "./NavLink";
 import { gsap } from "gsap";
+import { NavProps } from "../types/NavProps";
 
 /*
  * ナビゲーションコンポーネント

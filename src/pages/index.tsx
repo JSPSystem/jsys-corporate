@@ -1,10 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
-import BurgerMenu from "./BurgerMenu";
-import Nav from "./Nav";
-import Top from "./Top";
-import { NavItem } from "./types/NavItem";
+import BurgerMenu from "../components/BurgerMenu";
+import Nav from "../components/Nav";
+import Top from "../components/Top";
+import { NavItem } from "../types/NavItem";
 
 const Home: NextPage = () => {
   const navItems: NavItem[] = [

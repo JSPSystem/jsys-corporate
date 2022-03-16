@@ -1,6 +1,6 @@
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
-import { NavLinkProps } from "./types/NavLinkProps";
+import { NavLinkProps } from "../types/NavLinkProps";
 
 gsap.registerPlugin(ScrollToPlugin);
 

@@ -1,6 +1,6 @@
 import { elastic as Menu } from "react-burger-menu";
+import { BurgerMenuProps } from "../types/BurgerMenuProps";
 import NavLink from "./NavLink";
-import { BurgerMenuProps } from "./types/BurgerMenuProps";
 
 /*
  * ハンバーガーメニューコンポーネント
@@ -22,8 +22,9 @@ const BurgerMenu = (props: BurgerMenuProps) => {
       pageWrapId={props.pageWrapId}
       outerContainerId={props.outerContainerId}
       className="font-jura text-white"
+      disableAutoFocus
     >
-      <ul>{menu}</ul>
+      <ul className="outline-none">{menu}</ul>
     </Menu>
   );
 };

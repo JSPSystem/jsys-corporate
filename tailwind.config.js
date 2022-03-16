@@ -14,8 +14,8 @@ module.exports = {
         128: "32rem" /* 512px */,
       },
       backgroundImage: {
-        "img-top": "url('/images/bg_top.png')",
-        "img-top-mb": "url('/images/bg_top_mb.png')",
+        "img-top": "url('/jspsystem/images/bg_top.png')",
+        "img-top-mb": "url('/jspsystem/images/bg_top_mb.png')",
       },
     },
   },
