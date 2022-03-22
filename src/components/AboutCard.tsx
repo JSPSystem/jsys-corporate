@@ -6,7 +6,10 @@ const AboutCard = (props: AboutCardProps) => {
       return <p key={index}>{value}</p>;
     });
     return (
-      <div key={index} className="flex justify-center items-center py-1 md:py-2 mb-1 md:mb-3 border-b-2">
+      <div
+        key={index}
+        className="flex justify-center items-center py-1 md:py-2 mb-1 md:mb-3 border-b border-neutral-400"
+      >
         <div className="grow-0 pl-3 w-1/3 md:w-44">{row.title}</div>
         <div className="grow">{valuesString}</div>
       </div>
