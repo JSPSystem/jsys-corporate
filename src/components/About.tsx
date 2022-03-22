@@ -89,7 +89,9 @@ const About = () => {
         </p>
       </div>
       <div id="content_about_card" className="flex-1 w-full mt-3 md:mt-4">
-        <AboutCard rows={rows} />
+        <div className="mx-auto w-4/5 md:w-148 h-11/12 md:h-96">
+          <AboutCard rows={rows} />
+        </div>
       </div>
     </article>
   );

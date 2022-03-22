@@ -17,7 +17,7 @@ const AboutCard = (props: AboutCardProps) => {
   });
 
   return (
-    <div className="mx-auto flex justify-center items-center w-4/5 md:w-148 h-11/12 md:h-96 bg-white shadow-xl">
+    <div className="flex justify-center items-center w-full h-full bg-white shadow-xl">
       <div className="w-11/12 font-sansjp text-neutral-800 text-xs md:text-sm">{rows}</div>
     </div>
   );
