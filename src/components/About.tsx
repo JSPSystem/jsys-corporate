@@ -67,25 +67,28 @@ const About = () => {
   ];
 
   return (
-    <article id="content_about" className="w-full h-72 md:h-124 bg-color-about">
-      <p className="pt-2 md:pt-5 flex justify-center items-center text-neutral-800">
-        <span id="content_about_title" className="font-jura text-3xl md:text-5xl font-bold">
+    <article
+      id="content_about"
+      className="flex flex-col justify-center items-center w-full h-80 md:h-124 bg-color-about text-neutral-800"
+    >
+      <div className="flex pt-3 md:pt-6">
+        <p id="content_about_title" className="font-jura text-3xl md:text-5xl font-bold">
           <span>A</span>
           <span>B</span>
           <span>O</span>
           <span>U</span>
           <span>T</span>
-        </span>
-        <span id="content_about_subtitle" className="font-sansjp text-xs md:text-sm">
+        </p>
+        <p id="content_about_subtitle" className="font-sansjp my-auto text-xs md:text-sm">
           <span>―&nbsp;</span>
           <span>会</span>
           <span>社</span>
           <span>概</span>
           <span>要</span>
           <span>&nbsp;―</span>
-        </span>
-      </p>
-      <div id="content_about_card" className="h-full mt-3 md:mt-4">
+        </p>
+      </div>
+      <div id="content_about_card" className="flex-1 w-full mt-3 md:mt-4">
         <AboutCard rows={rows} />
       </div>
     </article>

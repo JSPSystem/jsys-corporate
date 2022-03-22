@@ -12,8 +12,12 @@ module.exports = {
         172: "43rem" /* 688px */,
       },
       height: {
+        88: "22rem" /* 352px */,
         124: "31rem" /* 496px */,
         128: "32rem" /* 512px */,
+        140: "35rem" /* 560px */,
+        208: "52rem" /* 832px */,
+        "11/12": "91.666667%",
       },
       backgroundImage: {
         "img-top": "url('/jspsystem/images/bg_top.png')",
