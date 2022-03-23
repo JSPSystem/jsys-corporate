@@ -37,9 +37,7 @@ const Service = () => {
       );
 
     // ビューポートのサイズでカードのアニメーションを変更
-    ScrollTrigger.saveStyles(
-      "#content_service_cards_card_web, #content_service_cards_card_ec, #content_service_cards_card_webservice",
-    );
+    ScrollTrigger.saveStyles("#content_service_cards > div");
     ScrollTrigger.matchMedia({
       // md=(min-width: 768px)以上
       "(min-width: 798px)": function () {
@@ -62,32 +60,21 @@ const Service = () => {
       // md未満
       "(max-width: 797px)": function () {
         // カード自身をトリガーにふわっと表示
-        gsap.from("#content_service_cards_card_web", {
+        gsap.set("#content_service_cards > div", {
           y: 28,
           opacity: 0,
-          duration: 1.3,
-          scrollTrigger: {
-            trigger: "#content_service_title",
-            start: "center 90%",
-          },
         });
-        gsap.from("#content_service_cards_card_ec", {
-          y: 28,
-          opacity: 0,
-          duration: 1.3,
-          scrollTrigger: {
-            trigger: "#content_service_cards_card_web",
-            start: "bottom 95%",
+        ScrollTrigger.batch("#content_service_cards > div", {
+          onEnter: (batch) => {
+            gsap.to(batch, {
+              y: 0,
+              opacity: 1,
+              duration: 1.3,
+              overwrite: true,
+            });
           },
-        });
-        gsap.from("#content_service_cards_card_webservice", {
-          y: 28,
-          opacity: 0,
-          duration: 1.3,
-          scrollTrigger: {
-            trigger: "#content_service_cards_card_ec",
-            start: "bottom 95%",
-          },
+          start: "top 90%",
+          once: true,
         });
       },
     });
@@ -95,21 +82,18 @@ const Service = () => {
 
   const services: ServiceCardProps[] = [
     {
-      id: "content_service_cards_card_web",
       image_src: ImgWeb.src,
       image_alt: "WEB SITE",
       title: "WEB SITE",
       description: "クライアントの目的に合わせたWebサイトを構築します。",
     },
     {
-      id: "content_service_cards_card_ec",
       image_src: ImgEc.src,
       image_alt: "EC SITE",
       title: "EC SITE",
       description: "EC-CUBEなどを使用したECサイトを構築します。",
     },
     {
-      id: "content_service_cards_card_webservice",
       image_src: ImgWebService.src,
       image_alt: "WEB SERVICE",
       title: "WEB SERVICE",
@@ -121,7 +105,6 @@ const Service = () => {
     return (
       <ServiceCard
         key={index}
-        id={service.id}
         image_src={service.image_src}
         image_alt={service.image_alt}
         title={service.title}
