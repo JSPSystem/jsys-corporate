@@ -80,7 +80,7 @@ const Service = () => {
     });
   }, []);
 
-  const services: ServiceCardProps[] = [
+  const items: ServiceCardProps[] = [
     {
       image_src: ImgWeb.src,
       image_alt: "WEB SITE",
@@ -101,14 +101,14 @@ const Service = () => {
     },
   ];
 
-  const cards = services.map((service, index) => {
+  const cards = items.map((item, index) => {
     return (
       <ServiceCard
         key={index}
-        image_src={service.image_src}
-        image_alt={service.image_alt}
-        title={service.title}
-        description={service.description}
+        image_src={item.image_src}
+        image_alt={item.image_alt}
+        title={item.title}
+        description={item.description}
       />
     );
   });
