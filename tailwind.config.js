@@ -7,16 +7,14 @@ module.exports = {
         jura: ["Jura", "sans-serif"],
       },
       width: {
-        112: "28rem" /* 448px */,
         148: "37rem" /* 592px */,
         172: "43rem" /* 688px */,
       },
       height: {
         88: "22rem" /* 352px */,
+        116: "29rem" /* 464px */,
         124: "31rem" /* 496px */,
-        128: "32rem" /* 512px */,
-        140: "35rem" /* 560px */,
-        208: "52rem" /* 832px */,
+        252: "63rem" /* 1008px */,
         "11/12": "91.666667%",
       },
       backgroundImage: {
@@ -24,6 +22,7 @@ module.exports = {
         "img-top-mb": "url('/jspsystem/images/bg_top_mb.png')",
         "color-about": "linear-gradient(to bottom, #eee 85% , #0f766d 15%)",
         "color-service": "linear-gradient(to bottom, #0f766d 85% , #eee 15%)",
+        "color-service-mb": "linear-gradient(to bottom, #0f766d 92% , #eee 8%)",
       },
     },
   },
