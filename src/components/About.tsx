@@ -35,7 +35,7 @@ const About = () => {
       .from(
         "#content_about_card",
         {
-          y: 75,
+          y: 28,
           duration: 1.3,
           ease: "power4.out",
         },
