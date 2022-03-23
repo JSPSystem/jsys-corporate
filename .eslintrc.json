@@ -1,10 +1,5 @@
 {
-  "extends": [
-    "next/core-web-vitals",
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier"
-  ],
+  "extends": ["next/core-web-vitals", "eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier"],
   "settings": {
     "import/resolver": {
       "node": {
@@ -13,17 +8,11 @@
     }
   },
   "rules": {
+    "@next/next/no-img-element": "off",
     "@typescript-eslint/indent": ["error", 2],
     "@typescript-eslint/prefer-interface": "off",
-    "react/jsx-filename-extension": [
-      "error",
-      { "extensions": [".jsx", ".tsx"] }
-    ],
+    "react/jsx-filename-extension": ["error", { "extensions": [".jsx", ".tsx"] }],
     "react/prop-types": "off",
-    "spaced-comment": [
-      "error",
-      "always",
-      { "markers": ["/"] }
-    ]
+    "spaced-comment": ["error", "always", { "markers": ["/"] }]
   }
 }
