@@ -1,46 +1,27 @@
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useTitleAnimation } from "../hooks/useCommonAnimation";
 import { AboutCardRow } from "../types/AboutCardRow";
 import AboutCard from "./AboutCard";
 
 const About = () => {
+  // タイトルのアニメーションを設定
+  useTitleAnimation("#content_about", "#content_about_title", "#content_about_subtitle");
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap
-      .timeline({
-        defaults: { opacity: 0, duration: 1, ease: "none" },
-        scrollTrigger: {
-          trigger: "#content_about",
-          start: "top 90%",
-        },
-      })
-      .from("#content_about_title > span", {
-        stagger: {
-          from: "start",
-          amount: 0.3,
-        },
-      })
-      .from(
-        "#content_about_subtitle > span",
-        {
-          stagger: {
-            from: "start",
-            amount: 0.3,
-          },
-        },
-        0.3,
-      )
-      .from(
-        "#content_about_card",
-        {
-          y: 28,
-          duration: 1.3,
-          ease: "power4.out",
-        },
-        0.3,
-      );
+    gsap.from("#content_about_card", {
+      opacity: 0,
+      y: 28,
+      duration: 1.3,
+      ease: "power4.out",
+      scrollTrigger: {
+        trigger: "#content_about_card",
+        start: "top 90%",
+      },
+    });
   }, []);
 
   const rows: AboutCardRow[] = [

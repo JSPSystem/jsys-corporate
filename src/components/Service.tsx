@@ -1,40 +1,19 @@
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import ServiceCard from "./ServiceCard";
 import { ServiceCardProps } from "../types/ServiceCardProps";
+import { useTitleAnimation } from "../hooks/useCommonAnimation";
+import ServiceCard from "./ServiceCard";
 import ImgWeb from "../../public/images/service_web.png";
 import ImgEc from "../../public/images/service_ec.png";
 import ImgWebService from "../../public/images/service_webservice.png";
 
 const Service = () => {
+  // タイトルのアニメーションを設定
+  useTitleAnimation("#content_service", "#content_service_title", "#content_service_subtitle");
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-
-    gsap
-      .timeline({
-        defaults: { opacity: 0, duration: 1, ease: "none" },
-        scrollTrigger: {
-          trigger: "#content_service",
-          start: "top 90%",
-        },
-      })
-      .from("#content_service_title > span", {
-        stagger: {
-          from: "start",
-          amount: 0.3,
-        },
-      })
-      .from(
-        "#content_service_subtitle > span",
-        {
-          stagger: {
-            from: "start",
-            amount: 0.3,
-          },
-        },
-        0.3,
-      );
 
     // ビューポートのサイズでカードのアニメーションを変更
     ScrollTrigger.saveStyles("#content_service_cards > div");
