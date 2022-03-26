@@ -17,8 +17,12 @@ const Works = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
+    const selector_card_l = "#content_works_h_cards div.works_card_l";
+    const selector_card_r = "#content_works_h_cards div.works_card_r";
+    const selector_card_v = "#content_works_v_cards div.works_card_v";
+
     // カードの拡大縮小
-    document.querySelectorAll("#content_works_h_cards > div, #content_works_v_cards > div").forEach((card) => {
+    document.querySelectorAll(`${selector_card_l}, ${selector_card_r}, ${selector_card_v}`).forEach((card) => {
       card.addEventListener("mouseenter", () => {
         gsap.to(card, {
           scale: 1.06,
@@ -36,15 +40,15 @@ const Works = () => {
     });
 
     // 実績カード（横）のアニメーションを設定
-    setHorizontalCardAnimation(true);
-    setHorizontalCardAnimation(false);
+    setHorizontalCardAnimation(selector_card_l, true);
+    setHorizontalCardAnimation(selector_card_r, false);
 
     // 実績カード（縦）のアニメーションを設定
-    gsap.set("#content_works_v_cards > div", {
+    gsap.set(selector_card_v, {
       y: 28,
       opacity: 0,
     });
-    ScrollTrigger.batch("#content_works_v_cards > div", {
+    ScrollTrigger.batch(selector_card_v, {
       onEnter: (batch) => {
         gsap.to(batch, {
           y: 0,
@@ -58,11 +62,9 @@ const Works = () => {
     });
   });
 
-  const setHorizontalCardAnimation = (is_left: boolean) => {
-    let selector = "#content_works_h_cards > div.works_left";
+  const setHorizontalCardAnimation = (selector: string, is_left: boolean) => {
     let from_x = 150;
     if (!is_left) {
-      selector = "#content_works_h_cards > div.works_right";
       from_x = -150;
     }
 
@@ -124,56 +126,60 @@ const Works = () => {
 
   const h_cards = items.map((item, index) => {
     return (
-      <WorksHorizontalCard
-        key={index}
-        image_left={item.image_left}
-        image_src={item.image_src}
-        image_alt={item.image_alt}
-        category={item.category}
-        name={item.name}
-        skillset={item.skillset}
-        link={item.link}
-      />
+      <section key={index}>
+        <WorksHorizontalCard
+          image_left={item.image_left}
+          image_src={item.image_src}
+          image_alt={item.image_alt}
+          category={item.category}
+          name={item.name}
+          skillset={item.skillset}
+          link={item.link}
+        />
+      </section>
     );
   });
 
   const v_cards = items.map((item, index) => {
     return (
-      <WorksVerticalCard
-        key={index}
-        image_left={item.image_left}
-        image_src={item.image_src}
-        image_alt={item.image_alt}
-        category={item.category}
-        name={item.name}
-        skillset={item.skillset}
-        link={item.link}
-      />
+      <section key={index}>
+        <WorksVerticalCard
+          image_left={item.image_left}
+          image_src={item.image_src}
+          image_alt={item.image_alt}
+          category={item.category}
+          name={item.name}
+          skillset={item.skillset}
+          link={item.link}
+        />
+      </section>
     );
   });
 
   return (
-    <article id="content_works" className="flex flex-col justify-center items-center w-full text-neutral-800">
-      <div className="flex pt-3 md:pt-6">
-        <p id="content_works_title" className="font-jura text-3xl md:text-5xl font-bold">
-          <span>W</span>
-          <span>O</span>
-          <span>R</span>
-          <span>K</span>
-          <span>S</span>
-        </p>
-        <p id="content_works_subtitle" className="font-sansjp my-auto text-xs md:text-sm">
-          <span>―&nbsp;</span>
-          <span>実</span>
-          <span>績</span>
-          <span>&nbsp;―</span>
-        </p>
-      </div>
-      <div id="content_works_h_cards" className="hidden md:block w-full">
-        {h_cards}
-      </div>
-      <div id="content_works_v_cards" className="block md:hidden w-full">
-        {v_cards}
+    <article id="content_works">
+      <div className="flex flex-col justify-center items-center w-full text-neutral-800">
+        <div className="flex pt-3 md:pt-6">
+          <h1 id="content_works_title" className="font-jura text-3xl md:text-5xl font-bold">
+            <span>W</span>
+            <span>O</span>
+            <span>R</span>
+            <span>K</span>
+            <span>S</span>
+          </h1>
+          <p id="content_works_subtitle" className="font-sansjp my-auto text-xs md:text-sm">
+            <span>―&nbsp;</span>
+            <span>実</span>
+            <span>績</span>
+            <span>&nbsp;―</span>
+          </p>
+        </div>
+        <div id="content_works_h_cards" className="hidden md:block w-full">
+          {h_cards}
+        </div>
+        <div id="content_works_v_cards" className="block md:hidden w-full">
+          {v_cards}
+        </div>
       </div>
     </article>
   );

@@ -16,12 +16,13 @@ const Service = () => {
     gsap.registerPlugin(ScrollTrigger);
 
     // ビューポートのサイズでカードのアニメーションを変更
-    ScrollTrigger.saveStyles("#content_service_cards > div");
+    const selector = "#content_service_cards div.service_card";
+    ScrollTrigger.saveStyles(selector);
     ScrollTrigger.matchMedia({
       // md=(min-width: 768px)以上
       "(min-width: 798px)": function () {
         // タイトルをトリガーに、左からふわっと表示
-        gsap.from("#content_service_cards > div", {
+        gsap.from(selector, {
           y: 28,
           opacity: 0,
           duration: 1.3,
@@ -39,11 +40,11 @@ const Service = () => {
       // md未満
       "(max-width: 797px)": function () {
         // カード自身をトリガーにふわっと表示
-        gsap.set("#content_service_cards > div", {
+        gsap.set(selector, {
           y: 28,
           opacity: 0,
         });
-        ScrollTrigger.batch("#content_service_cards > div", {
+        ScrollTrigger.batch(selector, {
           onEnter: (batch) => {
             gsap.to(batch, {
               y: 0,
@@ -82,43 +83,43 @@ const Service = () => {
 
   const cards = items.map((item, index) => {
     return (
-      <ServiceCard
-        key={index}
-        image_src={item.image_src}
-        image_alt={item.image_alt}
-        title={item.title}
-        description={item.description}
-      />
+      <section key={index}>
+        <ServiceCard
+          image_src={item.image_src}
+          image_alt={item.image_alt}
+          title={item.title}
+          description={item.description}
+        />
+      </section>
     );
   });
 
   return (
-    <article
-      id="content_service"
-      className="flex flex-col justify-center items-center w-full h-252 md:h-116 bg-color-service-mb md:bg-color-service text-neutral-800"
-    >
-      <div className="flex text-white pt-3 md:pt-6">
-        <p id="content_service_title" className="font-jura text-3xl md:text-5xl font-bold">
-          <span>S</span>
-          <span>E</span>
-          <span>R</span>
-          <span>V</span>
-          <span>I</span>
-          <span>C</span>
-          <span>E</span>
-        </p>
-        <p id="content_service_subtitle" className="font-sansjp my-auto text-xs md:text-sm">
-          <span>―&nbsp;</span>
-          <span>事</span>
-          <span>業</span>
-          <span>内</span>
-          <span>容</span>
-          <span>&nbsp;―</span>
-        </p>
-      </div>
-      <div className="flex-1 mt-3 md:mt-5">
-        <div id="content_service_cards" className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 w-52 md:w-172">
-          {cards}
+    <article id="content_service">
+      <div className="flex flex-col justify-center items-center w-full h-252 md:h-116 bg-color-service-mb md:bg-color-service text-neutral-800">
+        <div className="flex text-white pt-3 md:pt-6">
+          <h1 id="content_service_title" className="font-jura text-3xl md:text-5xl font-bold">
+            <span>S</span>
+            <span>E</span>
+            <span>R</span>
+            <span>V</span>
+            <span>I</span>
+            <span>C</span>
+            <span>E</span>
+          </h1>
+          <p id="content_service_subtitle" className="font-sansjp my-auto text-xs md:text-sm">
+            <span>―&nbsp;</span>
+            <span>事</span>
+            <span>業</span>
+            <span>内</span>
+            <span>容</span>
+            <span>&nbsp;―</span>
+          </p>
+        </div>
+        <div className="flex-1 mt-3 md:mt-5">
+          <div id="content_service_cards" className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 w-52 md:w-172">
+            {cards}
+          </div>
         </div>
       </div>
     </article>

@@ -5,11 +5,11 @@ const WorksHorizontalCard = (props: WorksCardProps) => {
   const info = (
     <div className="grow px-3 text-neutral-800">
       <p className="mt-8 font-jura text-sm font-bold text-teal-700">{props.category}</p>
-      <p className="font-sansjp font-bold">{props.name}</p>
+      <h2 className="font-sansjp font-bold">{props.name}</h2>
       <p className="mt-6 font-jura text-sm font-bold">{props.skillset}</p>
     </div>
   );
-  const add_class = props.image_left ? "works_left" : "works_right";
+  const add_class = props.image_left ? "works_card_l" : "works_card_r";
 
   return (
     <div className={`${add_class} mx-auto my-5 w-148 md:w-172 h-44 md:h-56 bg-white shadow-xl`}>

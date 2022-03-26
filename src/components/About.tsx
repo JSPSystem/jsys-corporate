@@ -48,30 +48,29 @@ const About = () => {
   ];
 
   return (
-    <article
-      id="content_about"
-      className="flex flex-col justify-center items-center w-full h-80 md:h-124 bg-color-about text-neutral-800"
-    >
-      <div className="flex pt-3 md:pt-6">
-        <p id="content_about_title" className="font-jura text-3xl md:text-5xl font-bold">
-          <span>A</span>
-          <span>B</span>
-          <span>O</span>
-          <span>U</span>
-          <span>T</span>
-        </p>
-        <p id="content_about_subtitle" className="font-sansjp my-auto text-xs md:text-sm">
-          <span>―&nbsp;</span>
-          <span>会</span>
-          <span>社</span>
-          <span>概</span>
-          <span>要</span>
-          <span>&nbsp;―</span>
-        </p>
-      </div>
-      <div id="content_about_card" className="flex-1 w-full mt-3 md:mt-4">
-        <div className="mx-auto w-4/5 md:w-148 h-11/12 md:h-96">
-          <AboutCard rows={rows} />
+    <article id="content_about">
+      <div className="flex flex-col justify-center items-center w-full h-80 md:h-124 bg-color-about text-neutral-800">
+        <div className="flex pt-3 md:pt-6">
+          <h1 id="content_about_title" className="font-jura text-3xl md:text-5xl font-bold">
+            <span>A</span>
+            <span>B</span>
+            <span>O</span>
+            <span>U</span>
+            <span>T</span>
+          </h1>
+          <p id="content_about_subtitle" className="font-sansjp my-auto text-xs md:text-sm">
+            <span>―&nbsp;</span>
+            <span>会</span>
+            <span>社</span>
+            <span>概</span>
+            <span>要</span>
+            <span>&nbsp;―</span>
+          </p>
+        </div>
+        <div id="content_about_card" className="flex-1 w-full mt-3 md:mt-4">
+          <div className="mx-auto w-4/5 md:w-148 h-11/12 md:h-96">
+            <AboutCard rows={rows} />
+          </div>
         </div>
       </div>
     </article>
