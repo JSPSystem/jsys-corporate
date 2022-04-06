@@ -1,31 +1,35 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import About from "../components/About";
 import BurgerMenu from "../components/BurgerMenu";
+import Contact from "../components/Contact";
 import Nav from "../components/Nav";
+import Service from "../components/Service";
 import Top from "../components/Top";
+import Works from "../components/Works";
 import { NavItem } from "../types/NavItem";
 
 const Home: NextPage = () => {
   const navItems: NavItem[] = [
     {
       text: "TOP",
-      link: "#top",
+      link: "#content_top",
     },
     {
       text: "ABOUT",
-      link: "#about",
+      link: "#content_about",
     },
     {
       text: "SERVICE",
-      link: "#service",
+      link: "#content_service",
     },
     {
       text: "WORKS",
-      link: "#works",
+      link: "#content_works",
     },
     {
       text: "CONTACT",
-      link: "#contact",
+      link: "#content_contact",
     },
   ];
 
@@ -45,38 +49,17 @@ const Home: NextPage = () => {
 
       <div id="container">
         <main id="main">
-          {/* テストで適当においている、最終的にコンポーネントになる */}
           <Top />
-          <div id="about" className="h-96">
-            about
-          </div>
-          <div id="service" className="h-96">
-            service
-          </div>
-          <div id="works" className="h-96">
-            work
-          </div>
-          <div id="contact" className="h-96">
-            contact
-          </div>
+          <About />
+          <Service />
+          <Works />
+          <Contact />
         </main>
-
-        <footer>
-          Footer
-          {/*
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Powered by{" "}
-            <span className={styles.logo}>
-              <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-            </span>
-          </a>
-          */}
-        </footer>
       </div>
+
+      <footer className="pt-2 pb-4 font-jura bg-neutral-900 text-white text-center text-xs md:text-base">
+        &copy; 2022 JSP System Inc. All rights reserved
+      </footer>
     </div>
   );
 };
