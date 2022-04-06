@@ -7,6 +7,7 @@ module.exports = {
         jura: ["Jura", "sans-serif"],
       },
       width: {
+        120: "30rem" /* 480px */,
         148: "37rem" /* 592px */,
         172: "43rem" /* 688px */,
         "6/11": "54.545455%",
@@ -24,6 +25,9 @@ module.exports = {
         "color-about": "linear-gradient(to bottom, #eee 85% , #0f766d 15%)",
         "color-service": "linear-gradient(to bottom, #0f766d 85% , #eee 15%)",
         "color-service-mb": "linear-gradient(to bottom, #0f766d 92% , #eee 8%)",
+      },
+      letterSpacing: {
+        widest: "1rem",
       },
     },
   },

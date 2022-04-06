@@ -1,0 +1,71 @@
+/*
+ * オーバーレイのデフォルトスタイル
+ */
+.overlay-base {
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0);
+  opacity: 0;
+  transition-property: all;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+  outline: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+ * オーバーレイを開いた後のスタイル
+ */
+.overlay-after {
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 1;
+}
+
+/*
+ * オーバーレイを閉じた後のスタイル
+ */
+.overlay-before {
+  background-color: rgba(0, 0, 0, 0);
+  opacity: 0;
+}
+
+/*
+ * コンテンツのデフォルトスタイル
+ */
+.content-base {
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  margin: 0 auto;
+  border: 0;
+  outline: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0.8);
+  transition-property: all;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+}
+
+/*
+ * コンテンツを開いた後のスタイル
+ */
+.content-after {
+  transform: scale(1);
+}
+
+/*
+ * コンテンツを閉じた後のスタイル
+ */
+.content-before {
+  transform: scale(0.8);
+}
