@@ -12,13 +12,15 @@ const About = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.from("#content_about_card", {
-      opacity: 0,
-      y: 28,
+    const card = "#content_about_card";
+    gsap.set(card, { y: 28, opacity: 0 });
+    gsap.to(card, {
+      y: 0,
+      opacity: 1,
       duration: 1.3,
       ease: "power4.out",
       scrollTrigger: {
-        trigger: "#content_about_card",
+        trigger: card,
         start: "top 90%",
       },
     });

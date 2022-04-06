@@ -17,18 +17,20 @@ const Service = () => {
 
     // ビューポートのサイズでカードのアニメーションを変更
     const selector = "#content_service_cards div.service_card";
+    gsap.set(selector, { y: 28, opacity: 0 });
+
     ScrollTrigger.saveStyles(selector);
     ScrollTrigger.matchMedia({
       // md=(min-width: 768px)以上
-      "(min-width: 798px)": function () {
-        // タイトルをトリガーに、左からふわっと表示
-        gsap.from(selector, {
-          y: 28,
-          opacity: 0,
+      "(min-width: 798px)": () => {
+        // カードエリアをトリガーに、左からふわっと表示
+        gsap.to(selector, {
+          y: 0,
+          opacity: 1,
           duration: 1.3,
           ease: "power4.out",
           scrollTrigger: {
-            trigger: "#content_service_title",
+            trigger: "#content_service_cards",
             start: "top 80%",
           },
           stagger: {
@@ -38,12 +40,8 @@ const Service = () => {
         });
       },
       // md未満
-      "(max-width: 797px)": function () {
-        // カード自身をトリガーにふわっと表示
-        gsap.set(selector, {
-          y: 28,
-          opacity: 0,
-        });
+      "(max-width: 797px)": () => {
+        // 各カード自身をトリガーにふわっと表示
         ScrollTrigger.batch(selector, {
           onEnter: (batch) => {
             gsap.to(batch, {

@@ -10,9 +10,11 @@ import { NavProps } from "../types/NavProps";
 const Nav = (props: NavProps) => {
   useEffect(() => {
     // 社名->メニューの順に表示
-    gsap.from("#header > div", {
-      y: 20,
-      opacity: 0,
+    const selector = "#header > div";
+    gsap.set(selector, { y: 20, opacity: 0 });
+    gsap.to(selector, {
+      y: 0,
+      opacity: 1,
       duration: 1.3,
       ease: "power4.out",
       stagger: {

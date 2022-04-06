@@ -3,37 +3,23 @@ import { gsap } from "gsap";
 
 const Top = () => {
   useEffect(() => {
-    // 文字列をふわっと表示、ヘッダメニューのアニメーションに若干かぶせて実行
+    // ヘッダのアニメーションに若干かぶせて、タイトル->スクロール文字の順でふわっと表示
+    const title = "#content_top_title";
+    const scroll = "#content_top_scroll";
+    gsap.set(title, { y: 20, opacity: 0 });
+    gsap.set(scroll, { y: -10, opacity: 0 });
     gsap
-      .timeline({ defaults: { opacity: 0, duration: 1, ease: "power3.out" } })
-      .from("#content_top_title", {
-        y: 20,
-        delay: 0.5,
-      })
-      .from(
-        "#content_top_scroll",
-        {
-          y: -10,
-        },
-        0.9,
-      );
+      .timeline({ defaults: { opacity: 1, duration: 1, ease: "power3.out" } })
+      .to(title, { y: 0, delay: 0.5 })
+      .to(scroll, { y: 0 }, 0.9);
 
     // スクロールの矢印のアニメーション
+    const arrow = "#content_top_scroll > span";
     gsap
       .timeline({ repeat: -1, defaults: { duration: 1, ease: "power4.out" } })
-      .from("#content_top_scroll > span", {
-        y: -60,
-      })
-      .to("#content_top_scroll > span", {
-        y: 0,
-      })
-      .to("#content_top_scroll > span", {
-        y: 60,
-        ease: "power4.in",
-      })
-      .set("#content_top_scroll > span", {
-        y: -60,
-      });
+      .set(arrow, { y: -60 })
+      .to(arrow, { y: 0 })
+      .to(arrow, { y: 60, ease: "power4.in" });
   }, []);
 
   return (
