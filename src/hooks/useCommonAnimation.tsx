@@ -30,5 +30,5 @@ export function useTitleAnimation(trigger: string, title: string, subtitle: stri
         },
         0.3,
       );
-  });
+  }, [title, subtitle, trigger]);
 }
