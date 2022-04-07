@@ -8,6 +8,7 @@ import Service from "../components/Service";
 import Top from "../components/Top";
 import Works from "../components/Works";
 import { NavItem } from "../types/NavItem";
+import Favicon from "../../public/favicon.ico";
 
 const Home: NextPage = () => {
   const navItems: NavItem[] = [
@@ -38,7 +39,7 @@ const Home: NextPage = () => {
       <Head>
         <title>株式会社 JSPシステム</title>
         <meta name="description" content="株式会社JSPシステムは、ITを通してお客様のやりたいことを実現し支援します。" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href={Favicon.src} />
       </Head>
 
       <header className="fixed top-0 left-0 right-0 bg-neutral-800/80 h-9 md:h-14 font-jura text-white z-50">
