@@ -38,7 +38,10 @@ const Home: NextPage = () => {
     <div>
       <Head>
         <title>株式会社 JSPシステム</title>
-        <meta name="description" content="株式会社JSPシステムは、ITを通してお客様のやりたいことを実現し支援します。" />
+        <meta
+          name="description"
+          content="株式会社JSPシステムは、システム開発でお客様のやりたいことを実現し支援する企業です。"
+        />
         <link rel="icon" href={Favicon.src} />
       </Head>
 
