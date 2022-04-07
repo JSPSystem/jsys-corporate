@@ -17,12 +17,12 @@ const Works = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    const selector_card_l = "#content_works_h_cards div.works_card_l";
-    const selector_card_r = "#content_works_h_cards div.works_card_r";
-    const selector_card_v = "#content_works_v_cards div.works_card_v";
+    const card_l = "#content_works_h_cards div.works_card_l";
+    const card_r = "#content_works_h_cards div.works_card_r";
+    const card_v = "#content_works_v_cards div.works_card_v";
 
     // カードの拡大縮小
-    document.querySelectorAll(`${selector_card_l}, ${selector_card_r}, ${selector_card_v}`).forEach((card) => {
+    document.querySelectorAll(`${card_l}, ${card_r}, ${card_v}`).forEach((card) => {
       card.addEventListener("mouseenter", () => {
         gsap.to(card, {
           scale: 1.06,
@@ -39,16 +39,13 @@ const Works = () => {
       });
     });
 
-    // 実績カード（横）のアニメーションを設定
-    setHorizontalCardAnimation(selector_card_l, true);
-    setHorizontalCardAnimation(selector_card_r, false);
+    // 実績カード（横）のスライドアニメーションを設定
+    setHorizontalCardAnimation(card_l, 150);
+    setHorizontalCardAnimation(card_r, -150);
 
     // 実績カード（縦）のアニメーションを設定
-    gsap.set(selector_card_v, {
-      y: 28,
-      opacity: 0,
-    });
-    ScrollTrigger.batch(selector_card_v, {
+    gsap.set(card_v, { y: 28, opacity: 0 });
+    ScrollTrigger.batch(card_v, {
       onEnter: (batch) => {
         gsap.to(batch, {
           y: 0,
@@ -62,16 +59,8 @@ const Works = () => {
     });
   });
 
-  const setHorizontalCardAnimation = (selector: string, is_left: boolean) => {
-    let from_x = 150;
-    if (!is_left) {
-      from_x = -150;
-    }
-
-    gsap.set(selector, {
-      x: from_x,
-      opacity: 0,
-    });
+  const setHorizontalCardAnimation = (selector: string, from_x: number) => {
+    gsap.set(selector, { x: from_x, opacity: 0 });
     ScrollTrigger.batch(selector, {
       onEnter: (batch) => {
         gsap.to(batch, {
