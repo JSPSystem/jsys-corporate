@@ -1,8 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  assetPrefix: ".",
-  basePath: "/jspsystem",
   trailingSlash: true,
   env: {
     RECAPTCHA_KEY: process.env.RECAPTCHA_KEY,

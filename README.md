@@ -2,7 +2,7 @@
 
 ## サイト URL
 
-https://www.jasupo.com/jspsystem/
+https://www.jspsys.net/
 
 ## 使用サイト・ツール
 
