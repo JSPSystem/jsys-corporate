@@ -20,8 +20,8 @@ module.exports = {
         "11/12": "91.666667%",
       },
       backgroundImage: {
-        "img-top": "url('/jspsystem/images/bg_top.png')",
-        "img-top-mb": "url('/jspsystem/images/bg_top_mb.png')",
+        "img-top": "url('/images/bg_top.png')",
+        "img-top-mb": "url('/images/bg_top_mb.png')",
         "color-about": "linear-gradient(to bottom, #eee 85% , #0f766d 15%)",
         "color-service": "linear-gradient(to bottom, #0f766d 85% , #eee 15%)",
         "color-service-mb": "linear-gradient(to bottom, #0f766d 92% , #eee 8%)",
