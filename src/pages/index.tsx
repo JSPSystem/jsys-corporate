@@ -37,10 +37,10 @@ const Home: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>株式会社 JSPシステム</title>
+        <title>愛媛県 新居浜市のホームページ制作/システム開発 | 株式会社 JSPシステム</title>
         <meta
           name="description"
-          content="株式会社JSPシステムは、システム開発でお客様のやりたいことを実現し支援する企業です。"
+          content="株式会社JSPシステムは、愛媛県新居浜市を拠点にITでお客様のやりたいことを実現し支援する企業です。"
         />
         <link rel="icon" href={Favicon.src} />
       </Head>

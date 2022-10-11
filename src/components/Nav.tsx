@@ -3,6 +3,7 @@ import Link from "next/link";
 import NavLink from "./NavLink";
 import { gsap } from "gsap";
 import { NavProps } from "../types/NavProps";
+import ImgGit from "../../public/images/GitHub-Mark-Light-32px.png";
 
 /*
  * ナビゲーションコンポーネント
@@ -39,6 +40,11 @@ const Nav = (props: NavProps) => {
         <Link href="/">
           <a className="text-lg md:text-3xl">{props.brand}</a>
         </Link>
+      </div>
+      <div className="flex-none ml-5">
+        <a href="https://github.com/JSPSystem">
+          <img src={ImgGit.src} alt="GitHub" className="w-2/3 md:w-full" />
+        </a>
       </div>
       <div className="flex w-full justify-end">
         <ul className="hidden md:flex justify-between">{menu}</ul>
