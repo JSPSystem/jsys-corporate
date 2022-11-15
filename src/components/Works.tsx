@@ -9,6 +9,7 @@ import ImgJsys from "../../public/images/works_jsys.png";
 import ImgJasupo from "../../public/images/works_jasupo.png";
 import ImgTfa from "../../public/images/works_tfa.png";
 import ImgSalesPeriod from "../../public/images/works_salesperiod.png";
+import ImgListAnime from "../../public/images/works_listanime.png";
 
 const Works = () => {
   // タイトルのアニメーションを設定
@@ -100,7 +101,7 @@ const Works = () => {
       category: "EC-CUBE4 PLUGIN",
       name: "管理画面セキュリティ向上プラグイン",
       skillset: "EC-CUBE / HTML / CSS / Twig / PHP",
-      link: "https://www.ec-cube.net/products/detail.php?product_id=2268",
+      link: "https://www.ec-cube.net/products/detail.php?product_id=2588",
     },
     {
       image_left: false,
@@ -109,7 +110,16 @@ const Works = () => {
       category: "EC-CUBE4 PLUGIN",
       name: "販売期間設定プラグイン",
       skillset: "EC-CUBE / HTML / CSS / Twig / PHP",
-      link: "https://www.ec-cube.net/products/detail.php?product_id=2279",
+      link: "https://www.ec-cube.net/products/detail.php?product_id=2581",
+    },
+    {
+      image_left: true,
+      image_src: ImgListAnime.src,
+      image_alt: "一覧商品アニメーションプラグイン",
+      category: "EC-CUBE4 PLUGIN FREE",
+      name: "一覧商品アニメーションプラグイン",
+      skillset: "EC-CUBE / HTML / CSS / Twig / PHP / GSAP",
+      link: "https://www.ec-cube.net/products/detail.php?product_id=2604",
     },
   ];
 
