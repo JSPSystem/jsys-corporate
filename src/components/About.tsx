@@ -33,11 +33,7 @@ const About = () => {
     },
     {
       title: "代表",
-      values: ["真鍋 圭輔"],
-    },
-    {
-      title: "所在地",
-      values: ["愛媛県新居浜市新須賀町2-8-36"],
+      values: ["眞鍋 健二"],
     },
     {
       title: "設立",
